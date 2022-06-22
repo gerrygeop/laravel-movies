@@ -1,0 +1,33 @@
+@extends('layouts.main')
+
+@section('title', 'Tv Shows')
+
+@section('content')
+
+	<div class="container mx-auto px-16 pt-16">
+
+		<div class="popular-shows border-b border-gray-800 pb-16">
+			<h2 class="uppercase tracking-wider font-semibold text-teal-400 text-lg">Popular Shows</h2>
+			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+
+				@foreach($popularTv as $tvshow)
+					<x-tv-card :tvshow="$tvshow"/>
+				@endforeach
+
+			</div>
+		</div>
+
+		<div class="top-rated-shows py-24">
+			<h2 class="uppercase tracking-wider font-semibold text-teal-400 text-lg">Top Rated Shows</h2>
+			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+
+				@foreach($topRatedTv as $tvshow)
+					<x-tv-card :tvshow="$tvshow"/>
+				@endforeach
+				
+			</div>
+		</div>
+
+	</div>
+
+@endsection
